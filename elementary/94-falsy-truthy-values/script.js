@@ -6,3 +6,4 @@
 //همه ی اشیا و ارایه ها true هستند
 //Boolean(Nan)  =>outPut = false
 //Boolean(undfined)  =>outPut = false
+//Boolean(null) => output = false
