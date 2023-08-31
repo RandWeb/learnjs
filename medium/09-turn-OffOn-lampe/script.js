@@ -14,9 +14,21 @@ bodyElement.append(divElement);
 
 function turnOffOnLampe(){
 
-    if(divElement.style.backgroundColor=="yellow"){
+    if(divElement.style.backgroundColor==="yellow"){
         divElement.style.backgroundColor = "white";
         return;
     }
     divElement.style.backgroundColor = "yellow";
+}
+
+function turnOffOrOnBulb(){
+   
+    const bulbElem = document.getElementById("bulb");
+
+   if ( bulbElem.src.includes("off")){
+       bulbElem.setAttribute("src","pics/bulbon.gif");
+   return;
+   }
+    bulbElem.setAttribute("src","pics/bulboff.gif");
+
 }
