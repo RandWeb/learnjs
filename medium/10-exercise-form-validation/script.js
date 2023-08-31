@@ -1,26 +1,30 @@
 function SubmitedForm() {
     const userNameInput = document.getElementById("userName");
     const passwordInput = document.getElementById("password");
-    let errors = [];
-    if (userNameInput.value.length <= 12) {
+    let messages = [];
+    let isInValidUserName = userNameInput.value.length <= 12;
+    let isInValidPassword = passwordInput.value.length <= 8;
+    if (isInValidUserName) {
         console.log(userNameInput.value)
-        errors.push("نام کاربری نمی تواند کمتر از 12  کاراکتر باشد")
+        messages.push("نام کاربری نمی تواند کمتر از 12  کاراکتر باشد")
     }
-    if (passwordInput.value.length <= 8) {
+    if (isInValidPassword) {
         console.log(passwordInput.value.length)
-        errors.push("رمز عبور نمی تواند کمتر از 8  کاراکتر باشد")
+        messages.push("رمز عبور نمی تواند کمتر از 8  کاراکتر باشد")
     }
-    if (errors.length > 0) {
-        showModalError(errors);
-        let time = Number(errors.length) * 1500
-        setTimeout(function () {
-            document.getElementById("modal-error").remove();
-        }, time);
-    }
+if (!isInValidUserName && !isInValidPassword){
+    messages.push("کاربر عزیز شما با موفقیت لاگین شدید")
+}
+    showModal(messages);
+    let time = Number(messages.length) * 1500
+    setTimeout(function () {
+        document.getElementById("modal-error").remove();
+    }, time);
+    
 }
 
 
-function showModalError(errors) {
+function showModal(errors) {
     const newDivElem = document.createElement("div");
     newDivElem.setAttribute("id", "modal-error")
     newDivElem.style.width = "250px";
@@ -35,6 +39,10 @@ function showModalError(errors) {
     newDivElem.style.position = "absolute";
     newDivElem.style.right = "2%";
     newDivElem.style.bottom = "2%";
+    newDivElem.style.transitionProperty = "width";
+    newDivElem.style.transitionDelay = ".5s";
+    newDivElem.style.transitionDuration = "2s";
+    newDivElem.style.transitionTimingFunction = "linear";
     newDivElem.innerText = errors.join("\n");
     const body = document.querySelector("body");
     body.appendChild(newDivElem);
