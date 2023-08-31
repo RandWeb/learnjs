@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8"/>
+    <meta http-equiv="X-UA-Compatible" content="IE=edge"/>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+    <title>form validation</title>
+</head>
+<body style="width: 100%">
+<style>
+    body {
+        background-color: green;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+        text-transform: capitalize;
+    }
+
+    input {
+        width: 250px;
+        height: 40px;
+        display: block;
+        margin: 10px;
+        border: 0.5px solid #eee;
+        outline: none;
+        background-color: #f3f3f3;
+        padding: 2px 6px;
+        text-decoration: none;
+        text-transform: capitalize;
+    }
+
+    input:last-of-type {
+        background-color: greenyellow;
+        cursor: pointer;
+    }
+
+    .container {
+        width: 400px;
+        height: 400px;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        background-color: white;
+    }
+    form > span{
+        font-size: 9pt;
+        text-align: right;
+        direction: rtl;
+        display: none;
+        margin: 0 15px;
+    }
+</style>
+
+<div class="container">
+    <form action="" class="from">
+        <input
+                type="text"
+                id="userName"
+                placeholder="username"
+                onkeyup="onKeyUpUserName(this.value)"
+        />
+        <span class="form-span-1">
+            خطای اول
+        </span>
+        <input
+                type="text"
+                id="password"
+                placeholder="password"
+                onkeydown="onKeyDownPassword(this.value)"
+        />
+        <span class="form-span-2">
+            خطای دوم
+        </span>
+        <input type="button" onclick="SubmitedForm()" value="register"/>
+    </form>
+</div>
+
+<script src="script.js"></script>
+</body>
+</html>
