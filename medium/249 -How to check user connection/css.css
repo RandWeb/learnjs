@@ -1,0 +1,26 @@
+﻿*{
+    margin: 0;
+    padding: 0;
+    border: none;
+    box-sizing: border-box;
+}
+.container{
+    height: 100vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+h2  {
+    padding: 2rem;
+    border-radius: 4px;
+    color: white;
+}
+.online{
+    transition: all .5s;
+    background-color: forestgreen;
+}
+.offline{
+    transition: all .5s;
+    background-color: orangered;
+}
