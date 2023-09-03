@@ -2,6 +2,7 @@ let h1Elem = document.getElementById("name");
 
 console.log(h1Elem.getAttribute("title")); //output : mehrdad
 console.log(h1Elem.title);
+console.log(h1Elem.className);
 console.log(h1Elem.getAttribute("customAttr")); //output : customAttr
 
 console.log(h1Elem.customAttr); //output : undefined
