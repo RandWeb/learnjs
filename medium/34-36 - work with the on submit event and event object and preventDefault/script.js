@@ -2,8 +2,10 @@ let loginForm = document.getElementById("login-form");
 let eventObject = document.getElementById("event-object");
 
 
-loginForm.addEventListener("submit",()=>{
-    console.log("submit")
+loginForm.addEventListener("submit",(e)=>{
+    e.preventDefault();
+    console.log("submit");
+
 })
 
 eventObject.addEventListener("click",(event)=>{
