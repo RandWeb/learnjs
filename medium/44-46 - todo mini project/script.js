@@ -17,8 +17,10 @@ inputElem.addEventListener("keydown",(e)=>{
 });
 function addTodo(todo){
     let liElem = document.createElement("li");
+    //liElem.className="todo-item"
     liElem.classList.add("todo-item");
     let iElem = document.createElement("i");
+    //iElem.className="todo-item-remove";
     iElem.classList.add("todo-item-remove");
   //  iElem.setAttribute("onClick","removeElem(event)");
     iElem.addEventListener("click",(e)=>{
